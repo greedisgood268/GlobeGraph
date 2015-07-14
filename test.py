@@ -72,32 +72,34 @@ def getAllTheLocation():
 	readfile.close()
 	return locator
 
-my_map = Basemap(projection='robin', lat_0=0, lon_0=0,
-               resolution='l', area_thresh=1000.0)
-			    
-my_map.drawcoastlines()
-my_map.drawcountries()
-my_map.fillcontinents(color='gray')
+if __name__ == '__main__':
 
-locator = getAllTheLocation()
-target = locator.getNodeSet()
-rowKeys = target.keys()
+	my_map = Basemap(projection='robin', lat_0=0, lon_0=0,
+				   resolution='l', area_thresh=1000.0)
+					
+	my_map.drawcoastlines()
+	my_map.drawcountries()
+	my_map.fillcontinents(color='gray')
 
-min_marker_size = 8 
+	locator = getAllTheLocation()
+	target = locator.getNodeSet()
+	rowKeys = target.keys()
 
-colorString = getAllTheColor()
-colorType = 0
+	min_marker_size = 8 
 
-for itemKey in rowKeys:
-	lineKeys = target[itemKey]
-	dataKeys = lineKeys.keys()
-	for data in dataKeys:
-		locationInfo = lineKeys[data].getLocation()
-		x,y = my_map(locationInfo[1],locationInfo[0])
-		msize = lineKeys[data].getNum() + min_marker_size
-		my_map.plot(x,y,color=colorString[colorType],marker='o',markersize=msize)
-		colorType = (colorType + 1) % len(colorString)
-		break
+	colorString = getAllTheColor()
+	colorType = 0
 
-plt.show()
+	for itemKey in rowKeys:
+		lineKeys = target[itemKey]
+		dataKeys = lineKeys.keys()
+		for data in dataKeys:
+			locationInfo = lineKeys[data].getLocation()
+			x,y = my_map(locationInfo[1],locationInfo[0])
+			msize = lineKeys[data].getNum() + min_marker_size
+			my_map.plot(x,y,color=colorString[colorType],marker='o',markersize=msize)
+			colorType = (colorType + 1) % len(colorString)
+			break
+
+	plt.show()
 
