@@ -1,0 +1,6 @@
+white,green,purple,blue,brown,orange,yellow,cyan,seagreen,lawngreen,springgreen,cornflowerblue,magenta,darkgoldenrod,chocolate,gold,tomato,deeppink,
+			orangered,darkolivegreen,indianred,lightpink,powderblue,peru,red,blueviolet,darkgreen,
+			darkorange,darkslateblue,firebrick,ghostwhite,indigo,lightsalmon,lightsteelblue,mediumpurple,
+			mediumvioletred,navajowhite,paleturquoise,pink,steelblue,darksalmon,
+			darkturquoise,dimgrey,hotpink,lightcoral,limegreen,mediumblue,mediumspringgreen,lightcyan,
+			mediumorchid,palegreen,sandybrown,yellowgreen,sienna
